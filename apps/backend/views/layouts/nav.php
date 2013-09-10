@@ -35,7 +35,7 @@
 
             array('label'=>'Create taxonomy',  'url'=>array('/taxonomy/create'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('create'))) ? true : false)),   
 
-            array('label'=>'Manage taxonomy',  'url'=>array('/resource/admin'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('update','admin'))) ? true : false)),   
+            array('label'=>'Manage taxonomy',  'url'=>array('/taxonomy/admin'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('update','admin'))) ? true : false)),   
 
             //Start RESOURCE ITEMS
             array('label'=>'Resource','icon'=>'picture'),            
