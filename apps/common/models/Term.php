@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "taxonomy_term".
+ * This is the model class for table "term".
  *
- * The followings are the available columns in table 'taxonomy_term':
+ * The followings are the available columns in table 'term':
  * @property string $id
  * @property string $taxonomy_id
  * @property string $name
@@ -12,14 +12,14 @@
  * @property integer $parent
  * @property integer $order
  */
-class TaxonomyTerm extends CActiveRecord
+class Term extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'taxonomy_term';
+		return 'term';
 	}
 
 	/**
@@ -58,12 +58,12 @@ class TaxonomyTerm extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'taxonomy_id' => t('labels','Taxonomy'),
-			'name' => t('labels','Name'),
-			'description' => t('labels','Description'),
-			'slug' => t('labels','Slug'),
-			'parent' => t('labels','Parent'),
-			'order' => t('labels','Order'),
+			'taxonomy_id' => 'Taxonomy',
+			'name' => 'Name',
+			'description' => 'Description',
+			'slug' => 'Slug',
+			'parent' => 'Parent',
+			'order' => 'Order',
 		);
 	}
 
@@ -102,7 +102,7 @@ class TaxonomyTerm extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return TaxonomyTerm the static model class
+	 * @return Term the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

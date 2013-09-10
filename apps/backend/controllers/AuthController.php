@@ -6,4 +6,10 @@
  */
 class AuthController extends BeController {
 
+	/* Open on startup */
+	public function actionIndex() {	
+		
+		$this->render('index',array());
+	}
+
 }

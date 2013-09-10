@@ -227,10 +227,10 @@ CREATE TABLE `taxonomy` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taxonomy_term`
+-- Table structure for table `term`
 --
 
-CREATE TABLE `taxonomy_term` (
+CREATE TABLE `term` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `taxonomy_id` int(11) unsigned NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -243,7 +243,7 @@ CREATE TABLE `taxonomy_term` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `taxonomy_term`
+-- Dumping data for table `term`
 --
 
 
@@ -374,23 +374,6 @@ CREATE TABLE `user_resource` (
 -- Dumping data for table `user_resource`
 --
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_stat`
---
-
-CREATE TABLE `user_stat` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `actor_id` int(11) NOT NULL,
-  `action` varchar(20) NOT NULL,
-  `ip` varchar(50) NOT NULL,
-  `user_agent` text NOT NULL,
-  `date_created` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `user_stat`

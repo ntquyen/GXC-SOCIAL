@@ -1,23 +1,23 @@
 <?php
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
+	'Objects'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(	
-	array('label'=>t('labels','Create User'),'url'=>array('create')),
-	array('label'=>t('labels','Manage User(s)'),'url'=>array('view'),'active'=>'true'),
+	array('label'=>t('labels','Create Object'),'url'=>array('create')),
+	array('label'=>t('labels','Manage Object(s)'),'url'=>array('view'),'active'=>'true'),
 );
 
 ?>
 
-<h1>Manage Users</h1>
+<h1><?php echo t('labels','Manage'); ?>Objects</h1>
 
-<script type="text/javascript">var user_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
+<script type="text/javascript">var object_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
 
 <?php $this->widget('bootstrap.widgets.TbExtendedGridView',array(
 	'type' => 'bordered striped',
-	'id'=>'user-grid',
+	'id'=>'object-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'bulkActions' => array(
@@ -35,12 +35,12 @@ $this->menu=array(
 					     }); 
 						 $.ajax({
 			                type: "POST",
-			                url: user_grid_batch_delete_url,
+			                url: object_grid_batch_delete_url,
 			                data: {"ids":ids},
 			                dataType:"json",
 			                success: function(resp){			                				                    
 			                    if(resp.status == "success"){
-			                       $.fn.yiiGridView.update("user-grid");
+			                       $.fn.yiiGridView.update("object-grid");
 			                    }else{
 			                        alert(resp.msg);
 			                    }
@@ -59,10 +59,20 @@ $this->menu=array(
 	),
 	'columns'=>array(
 		'id',
-		'username',
-		'display_name',
-		'email',
-		'thumb',		
+		'guid',
+		'lang',
+		'user_id',
+		'type',
+		'name',
+		/*
+		'description',
+		'content',
+		'slug',
+		'thumb',
+		'date_created',
+		'date_modified',
+		'status',
+		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

@@ -15,15 +15,15 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(		
-	array('label'=>'View <?php echo $this->modelClass; ?>','url'=>array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'active'=>true),
-	array('label'=>'Update <?php echo $this->modelClass; ?>','url'=>array('update','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
-	array('label'=>'Delete <?php echo $this->modelClass; ?>','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>(s)','url'=>array('admin')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
+	array('label'=>t('labels','View <?php echo $this->modelClass; ?>'),'url'=>array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'active'=>true),
+	array('label'=>t('labels','Update <?php echo $this->modelClass; ?>'),'url'=>array('update','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
+	array('label'=>t('labels','Delete <?php echo $this->modelClass; ?>'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>(s)'),'url'=>array('admin')),
+	array('label'=>t('labels','Create <?php echo $this->modelClass; ?>'),'url'=>array('create')),
 );
 ?>
 
-<h1>View <?php echo $this->modelClass." #<?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></h1>
+<h1><?php echo "<?php echo t('labels','View'); ?>"; ?>  <?php echo $this->modelClass." #<?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></h1>
 
 <?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,

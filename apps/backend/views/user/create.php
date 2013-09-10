@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create User','url'=>array('create'),'active'=>true),
-	array('label'=>'Manage User(s)','url'=>array('admin')),
+	array('label'=>t('labels','Create User'),'url'=>array('create'),'active'=>true),
+	array('label'=>t('labels','Manage User(s)'),'url'=>array('admin')),
 );
 ?>
 

@@ -16,7 +16,7 @@
 
             array('label'=>'Manage users',  'url'=>array('/user/admin'),'active'=> ((Yii::app()->controller->id=='user') && (in_array(Yii::app()->controller->action->id,array('update','admin'))) ? true : false)),   
 
-            array('label'=>'Permissions',  'url'=>array('/auth/assignment'),'active'=>in_array(Yii::app()->controller->id,array('assignment','authitem','operation','role','task')) ?true:false),  
+            array('label'=>'Permissions',  'url'=>array('/auth/index'),'active'=>in_array(Yii::app()->controller->id,array('auth')) ?true:false),  
                         
             //Start OBJECT ITEMS
             array('label'=>'Object','icon'=>'file'),            

@@ -14,13 +14,13 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(	
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>(s)','url'=>array('view'),'active'=>'true'),
+	array('label'=>t('labels','Create <?php echo $this->modelClass; ?>'),'url'=>array('create')),
+	array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>(s)'),'url'=>array('view'),'active'=>'true'),
 );
 
 ?>
 
-<h1>Manage <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
+<h1><?php echo "<?php echo t('labels','Manage'); ?>"; ?> <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
 
 <script type="text/javascript">var <?php echo $this->class2id($this->modelClass).'_grid_batch_delete_url'; ?>=<?php echo "'<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';"; ?></script>
 
