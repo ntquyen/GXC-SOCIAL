@@ -69,6 +69,7 @@ $this->menu=array(
 		'content',
 		'slug',
 		'thumb',
+		'date_published',
 		'date_created',
 		'date_modified',
 		'status',

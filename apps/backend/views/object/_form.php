@@ -25,6 +25,8 @@
 
 	<?php echo $form->textFieldRow($model,'thumb',array('maxlength'=>255)); ?>
 
+	<?php echo $form->textFieldRow($model,'date_published',array()); ?>
+
 	<?php echo $form->textFieldRow($model,'date_created',array()); ?>
 
 	<?php echo $form->textFieldRow($model,'date_modified',array()); ?>

@@ -1,9 +1,5 @@
 <?php
-/**
- * ObjectController.php
- *
- * @author: Tuan Nguyen - nganhtuan63@gmail.com
- */
+
 class ObjectController extends BeController
 {
 	/**

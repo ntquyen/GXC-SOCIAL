@@ -111,6 +111,7 @@ CREATE TABLE `object` (
   `content` text,
   `slug` varchar(255) DEFAULT NULL,
   `thumb` varchar(255) DEFAULT NULL,
+  `date_published` int(10) NOT NULL,
   `date_created` int(11) NOT NULL,
   `date_modified` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,

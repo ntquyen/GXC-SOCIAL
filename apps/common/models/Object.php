@@ -14,6 +14,7 @@
  * @property string $content
  * @property string $slug
  * @property string $thumb
+ * @property integer $date_published
  * @property integer $date_created
  * @property integer $date_modified
  * @property integer $status
@@ -36,14 +37,14 @@ class Object extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('guid, user_id, type, date_created, date_modified, status', 'required'),
-			array('lang, user_id, date_created, date_modified, status', 'numerical', 'integerOnly'=>true),
+			array('guid, user_id, type, date_published, date_created, date_modified, status', 'required'),
+			array('lang, user_id, date_published, date_created, date_modified, status', 'numerical', 'integerOnly'=>true),
 			array('guid', 'length', 'max'=>23),
 			array('slug, thumb', 'length', 'max'=>255),
 			array('name, description, content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, guid, lang, user_id, type, name, description, content, slug, thumb, date_created, date_modified, status', 'safe', 'on'=>'search'),
+			array('id, guid, lang, user_id, type, name, description, content, slug, thumb, date_published, date_created, date_modified, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,18 +66,19 @@ class Object extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'guid' => t('labels','GUID'),
-			'lang' => t('labels','Language'),
-			'user_id' => t('labels','User'),
-			'type' => t('labels','Type'),
-			'name' => t('labels','Name'),
-			'description' => t('labels','Description'),
-			'content' => t('labels','Content'),
-			'slug' => t('labels','Slug'),
-			'thumb' => t('labels','Thumb'),
-			'date_created' => t('labels','Date Created'),
-			'date_modified' => t('labels','Date Modified'),
-			'status' => t('labels','Status'),
+			'guid' => 'Guid',
+			'lang' => 'Lang',
+			'user_id' => 'User',
+			'type' => 'Type',
+			'name' => 'Name',
+			'description' => 'Description',
+			'content' => 'Content',
+			'slug' => 'Slug',
+			'thumb' => 'Thumb',
+			'date_published' => 'Date Published',
+			'date_created' => 'Date Created',
+			'date_modified' => 'Date Modified',
+			'status' => 'Status',
 		);
 	}
 
@@ -108,6 +110,7 @@ class Object extends CActiveRecord
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('slug',$this->slug,true);
 		$criteria->compare('thumb',$this->thumb,true);
+		$criteria->compare('date_published',$this->date_published);
 		$criteria->compare('date_created',$this->date_created);
 		$criteria->compare('date_modified',$this->date_modified);
 		$criteria->compare('status',$this->status);
