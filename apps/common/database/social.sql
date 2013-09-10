@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 10, 2013 at 05:04 PM
+-- Generation Time: Sep 10, 2013 at 06:41 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
@@ -206,6 +206,28 @@ CREATE TABLE `resource` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `setting`
+--
+
+CREATE TABLE `setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(64) NOT NULL,
+  `value` longtext NOT NULL,
+  `group` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `key` (`key`),
+  KEY `group` (`group`),
+  KEY `key_2` (`key`,`group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `setting`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `taxonomy`
 --
 
@@ -372,11 +394,6 @@ CREATE TABLE `user_resource` (
 
 --
 -- Dumping data for table `user_resource`
---
-
-
---
--- Dumping data for table `user_stat`
 --
 
 
