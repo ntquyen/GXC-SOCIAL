@@ -169,7 +169,8 @@ class WebUser extends CWebUser{
         
         // Set User States here
         $this->info=$info;            
-
+        
+                
         // Set Admin if the user is in group of Admin
         //$this->setIsAdmin(in_array($this->name, Yii::app()->authManager->admins));
     }
