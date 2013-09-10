@@ -1,6 +1,10 @@
 <?php
-
-class ResourceController extends Controller
+/**
+ * ResourceController.php
+ *
+ * @author: Tuan Nguyen - nganhtuan63@gmail.com
+ */
+class ResourceController extends BeController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

@@ -1,6 +1,10 @@
 <?php
-
-class TermController extends Controller
+/**
+ * TermController.php
+ *
+ * @author: Tuan Nguyen - nganhtuan63@gmail.com
+ */
+class TermController extends BeController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

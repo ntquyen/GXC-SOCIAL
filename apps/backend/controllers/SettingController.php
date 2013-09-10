@@ -1,6 +1,10 @@
 <?php
-
-class SettingController extends Controller
+/**
+ * SettingController.php
+ *
+ * @author: Tuan Nguyen - nganhtuan63@gmail.com
+ */
+class SettingController extends BeController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
