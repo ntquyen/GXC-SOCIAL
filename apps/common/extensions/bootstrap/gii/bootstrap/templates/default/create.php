@@ -19,6 +19,6 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo "<?php echo t('labels','Create'); ?>"; ?> <?php echo $this->modelClass; ?></h1>
+<h1><?php echo "<?php echo t('labels','Create ".$this->modelClass."'); ?>"; ?></h1>
 
 <?php echo "<?php echo \$this->renderPartial('_form', array('model'=>\$model)); ?>"; ?>

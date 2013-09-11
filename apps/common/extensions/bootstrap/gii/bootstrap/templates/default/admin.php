@@ -20,7 +20,7 @@ $this->menu=array(
 
 ?>
 
-<h1><?php echo "<?php echo t('labels','Manage'); ?>"; ?> <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
+<h1><?php echo "<?php echo t('labels','Manage ".$this->pluralize($this->class2name($this->modelClass))."'); ?>"; ?></h1>
 
 <script type="text/javascript">var <?php echo $this->class2id($this->modelClass).'_grid_batch_delete_url'; ?>=<?php echo "'<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';"; ?></script>
 

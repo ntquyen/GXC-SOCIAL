@@ -1,9 +1,5 @@
 <?php
-/**
- * TermController.php
- *
- * @author: Tuan Nguyen - nganhtuan63@gmail.com
- */
+
 class TermController extends BeController
 {
 	/**

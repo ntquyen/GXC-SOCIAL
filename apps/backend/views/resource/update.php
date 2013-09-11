@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 $this->menu=array(	
 	array('label'=>t('labels','Create Resource'),'url'=>array('create')),
 	array('label'=>t('labels','View Resource'),'url'=>array('view','id'=>$model->id)),
-	array('label'=>t('labels',''Update Resource'),'url'=>array('update','id'=>$model->id),'active'=>true),
-	array('label'=>t('labels',''Manage Resource(s)'),'url'=>array('admin')),
+	array('label'=>t('labels','Update Resource'),'url'=>array('update','id'=>$model->id),'active'=>true),
+	array('label'=>t('labels','Manage Resource(s)'),'url'=>array('admin')),
 );
 ?>
 

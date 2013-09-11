@@ -6,10 +6,20 @@
  */
 class AuthController extends BeController {
 
-	/* Open on startup */
-	public function actionIndex() {	
+	/* This is for Role Action */
+	public function actionIndex() {					
 		
-		$this->render('index',array());
+		$dataProvider = $this->getDataProvider(CAuthItem::TYPE_ROLE);		
+		$this->render('index', array(
+			'dataProvider' => $dataProvider,
+		));
+
+	}
+
+	public function getDataProvider($type) {
+		$dataProvider = new AuthItemDataProvider();
+		$dataProvider->type = $type;
+		return $dataProvider;
 	}
 
 }

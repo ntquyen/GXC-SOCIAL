@@ -67,6 +67,9 @@ class Environment {
 
             //Import from Common folder
             'common.components.*',
+            'common.components.auth.*',
+            'common.components.controller.*',
+            'common.components.user.*',
             'common.models.*',
           
         ),
@@ -93,7 +96,7 @@ class Environment {
                 
                 //User Componenets
                 'user'=>array(      
-                    'class'=>'common.components.WebUser',                                   
+                    'class'=>'common.components.user.WebUser',                                   
                     'allowAutoLogin'=>true,     
                     'autoRenewCookie'=>true,
                     'loginUrl'=>array('site/login'),                  

@@ -11,7 +11,7 @@ $this->menu=array(
 
 ?>
 
-<h1><?php echo t('labels','Manage'); ?> Terms</h1>
+<h1><?php echo t('labels','Manage Terms'); ?></h1>
 
 <script type="text/javascript">var term_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
 
