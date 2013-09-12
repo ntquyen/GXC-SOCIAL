@@ -34,9 +34,12 @@ class AuthItemDataProvider extends CDataProvider
 	 */
 	protected function fetchData()
 	{
+		
 		if (empty($this->_items) && $this->type !== null)
 		{
+
 			$authItems = Yii::app()->authManager->getAuthItems($this->type);
+
 			$this->setAuthItems($authItems);
 		}
 

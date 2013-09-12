@@ -1,17 +1,7 @@
-<?php
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(	
-	array('label'=>t('labels','Create User'),'url'=>array('create')),
-	array('label'=>t('labels','Manage User(s)'),'url'=>array('view'),'active'=>'true'),
-);
-
+<?php 
+breadcrumbs(array(t('labels','Manage')));
 ?>
-
-<h1>Manage Users</h1>
+<h1><?php echo t('labels','Manage Users'); ?></h1>
 
 <script type="text/javascript">var user_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
 

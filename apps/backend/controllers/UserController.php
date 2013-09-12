@@ -12,12 +12,27 @@ class UserController extends BeController
 	 */
 	public $layout='//layouts/column2';
 
+	protected function beforeAction(){		
+		//Prepare Breadcrumbs
+		$this->breadcrumbs=array(
+			'User'=>array('admin'),		
+		);	
+
+		//Prepare Menu
+		$this->menu=array(					
+			array('label'=>t('labels','Manage User(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			array('label'=>t('labels','Create User'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
+		);	
+		return true;
+	}
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
 	{
+				
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -28,7 +43,7 @@ class UserController extends BeController
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{
+	{		
 		$model=new UserForm;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -88,7 +103,6 @@ class UserController extends BeController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -157,6 +171,7 @@ class UserController extends BeController
 	 */
 	public function actionAdmin()
 	{
+
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['User']))

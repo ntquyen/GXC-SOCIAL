@@ -5,63 +5,36 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(		
-	array('label'=>t('labels','Roles'),'url'=>array('role'),'active'=>true),
-	array('label'=>t('labels','Operations'),'url'=>array('operation')),
+	array('label'=>t('labels','Roles'),'url'=>array('index','type'=>CAuthItem::TYPE_ROLE),'active'=> ($type==CAuthItem::TYPE_ROLE) ? true : false ),
+	array('label'=>t('labels','Operations'),'url'=>array('index','type'=>CAuthItem::TYPE_OPERATION), 'active'=> ($type==CAuthItem::TYPE_OPERATION) ? true : false),
 );
 
 ?>
 
-<h1><?php echo t('labels','Manage Roles'); ?></h1>
+<h1><?php echo t('labels','Manage '.$this->authLabels($type)); ?></h1>
 
-<script type="text/javascript">var auth_item_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
-
-<?php $this->widget('bootstrap.widgets.TbExtendedGridView',array(
+<?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'type' => 'bordered striped',
 	'id'=>'auth-item',
 	'dataProvider'=>$dataProvider,	
-	'bulkActions' => array(
-		'actionButtons' => array(
-			array(
-					'buttonType' => 'button',
-					'type' => 'primary',
-					'size' => 'small',
-					'label' => t('labels','Process Delete'),
-					'click' => 'js:function(checked){
-						if(!confirm("Are you sure you want to delete these items?")) return false;
-						 var ids= [];
-					     checked.each(function(){					     	
-					         ids.push($(this).val());
-					     }); 
-						 $.ajax({
-			                type: "POST",
-			                url: auth_item_grid_batch_delete_url,
-			                data: {"ids":ids},
-			                dataType:"json",
-			                success: function(resp){			                				                    
-			                    if(resp.status == "success"){
-			                       $.fn.yiiGridView.update("auth-item");
-			                    }else{
-			                        alert(resp.msg);
-			                    }
-			                }
-			            });
-
-					}',
-					'id' => 'process_delete',				
-				)
-			),
-			// if grid doesn't have a checkbox column type, it will attach
-			// one and this configuration will be part of it
-			'checkBoxColumnConfig' => array(
-			    'name' => 'id'
-			),
-	),
-	'columns'=>array(
-		'id',
-		'name',
-		'description',			
+	'columns'=>array(		
 		array(
+            'name' => t('labels','Name'),
+            'value' => '$data->name',
+        ),					
+        array(
+            'name' => t('labels','Description'),
+            'value' => '$data->description',
+        ),		
+        array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
+			'viewButtonLabel' => t('labels', 'View'),
+			'viewButtonUrl' => "Yii::app()->controller->createUrl('view', array('type'=>$type,'name'=>\$data->name))",
+			'updateButtonLabel' => t('labels', 'Edit'),
+			'updateButtonUrl' => "Yii::app()->controller->createUrl('update', array('type'=>$type,'name'=>\$data->name))",
+			'deleteButtonLabel' => t('labels', 'Delete'),
+			'deleteButtonUrl' => "Yii::app()->controller->createUrl('delete', array('type'=>$type,'name'=>\$data->name))",
+			'deleteConfirmation' => t('labels', 'Are you sure you want to delete this item?'),
+		),		
 	),
 )); ?>

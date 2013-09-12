@@ -1,16 +1,6 @@
-<?php
-$this->breadcrumbs=array(
-	'Terms'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(	
-	array('label'=>t('labels','Create Term'),'url'=>array('create')),
-	array('label'=>t('labels','Manage Term(s)'),'url'=>array('view'),'active'=>'true'),
-);
-
+<?php 
+breadcrumbs(array(t('labels','Manage')));
 ?>
-
 <h1><?php echo t('labels','Manage Terms'); ?></h1>
 
 <script type="text/javascript">var term_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>

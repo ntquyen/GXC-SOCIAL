@@ -8,15 +8,20 @@ class TermController extends BeController
 	 */
 	public $layout='//layouts/column2';
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
+	protected function beforeAction(){		
+		//Prepare Breadcrumbs
+		$this->breadcrumbs=array(
+			'Term'=>array('admin'),		
+		);	
+		//Prepare Menu
+		$this->menu=array(					
+			array('label'=>t('labels','Create Term'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
+			array('label'=>t('labels','Manage Term(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			
+		);		
+		return true;
 	}
+
 
 	/**
 	 * Specifies the access control rules.
@@ -34,7 +39,7 @@ class TermController extends BeController
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
-	{
+	{		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -70,6 +75,7 @@ class TermController extends BeController
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed

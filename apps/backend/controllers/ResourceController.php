@@ -1,9 +1,5 @@
 <?php
-/**
- * ResourceController.php
- *
- * @author: Tuan Nguyen - nganhtuan63@gmail.com
- */
+
 class ResourceController extends BeController
 {
 	/**
@@ -12,15 +8,20 @@ class ResourceController extends BeController
 	 */
 	public $layout='//layouts/column2';
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
+	protected function beforeAction(){		
+		//Prepare Breadcrumbs
+		$this->breadcrumbs=array(
+			'Resource'=>array('admin'),		
+		);	
+		//Prepare Menu
+		$this->menu=array(					
+			array('label'=>t('labels','Create Resource'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
+			array('label'=>t('labels','Manage Resource(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			
+		);		
+		return true;
 	}
+
 
 	/**
 	 * Specifies the access control rules.
@@ -38,7 +39,7 @@ class ResourceController extends BeController
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
-	{
+	{		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -74,6 +75,7 @@ class ResourceController extends BeController
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed

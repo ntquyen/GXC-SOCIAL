@@ -6,6 +6,12 @@
     </div>
     <div class="span10" id="container">
         <div id="content">
+            <?php if(isset($this->breadcrumbs)):?>
+                <?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+                    'links'=>$this->breadcrumbs,
+                )); ?><!-- breadcrumbs -->
+            <?php endif?>
+
         	<?php $this->widget('bootstrap.widgets.TbMenu', array(
 			    	'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
 			    	//'stacked'=>false, // whether this is a stacked menu

@@ -1,16 +1,6 @@
-<?php
-$this->breadcrumbs=array(
-	'Objects'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(	
-	array('label'=>t('labels','Create Object'),'url'=>array('create')),
-	array('label'=>t('labels','Manage Object(s)'),'url'=>array('view'),'active'=>'true'),
-);
-
+<?php 
+breadcrumbs(array(t('labels','Manage')));
 ?>
-
 <h1><?php echo t('labels','Manage Objects'); ?></h1>
 
 <script type="text/javascript">var object_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>

@@ -1,17 +1,7 @@
-<?php
-$this->breadcrumbs=array(
-	'Taxonomies'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(	
-	array('label'=>t('labels','Create Taxonomy'),'url'=>array('create')),
-	array('label'=>t('labels','Manage Taxonomy(s)'),'url'=>array('view'),'active'=>'true'),
-);
-
+<?php 
+breadcrumbs(array(t('labels','Manage')));
 ?>
-
-<h1><?php echo t('labels','Manage'); ?> Taxonomies</h1>
+<h1><?php echo t('labels','Manage Taxonomies'); ?></h1>
 
 <script type="text/javascript">var taxonomy_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>
 

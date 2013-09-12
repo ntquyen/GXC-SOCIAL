@@ -1,16 +1,6 @@
-<?php
-$this->breadcrumbs=array(
-	'Resources'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(	
-	array('label'=>t('labels','Create Resource'),'url'=>array('create')),
-	array('label'=>t('labels','Manage Resource(s)'),'url'=>array('view'),'active'=>'true'),
-);
-
+<?php 
+breadcrumbs(array(t('labels','Manage')));
 ?>
-
 <h1><?php echo t('labels','Manage Resources'); ?></h1>
 
 <script type="text/javascript">var resource_grid_batch_delete_url='<?php echo Yii::app()->controller->createUrl(Yii::app()->controller->id.'/batchdelete',array()); ?>';</script>

@@ -104,6 +104,20 @@ function param($name)
     return Yii::app()->params[$name];
 }
 
+/** Quick function to merge the current breadcrumb and Item **/
+function breadcrumbs($arr){    
+    Yii::app()->controller->breadcrumbs=array_merge(Yii::app()->controller->breadcrumbs,$arr);
+}
+
+/** Quick function to merge the current menu and Item **/
+function menu($arr,$pos='before'){    
+    if($pos=='before'){
+        Yii::app()->controller->menu=array_merge($arr,Yii::app()->controller->menu);            
+    } else {
+        Yii::app()->controller->menu=array_merge(Yii::app()->controller->menu,$arr);    
+    }
+    
+}
 
 /**
  * var_dump($varialbe) and exit

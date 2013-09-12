@@ -7,7 +7,7 @@
 ?>
 <?php echo "<?php\n"; ?>
 
-class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass."\n"; ?>
+class <?php echo $this->controllerClass; ?> extends <?php echo 'Be'.$this->baseControllerClass."\n"; ?>
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -15,15 +15,20 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public $layout='//layouts/column2';
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
+	protected function beforeAction(){		
+		//Prepare Breadcrumbs
+		$this->breadcrumbs=array(
+			'<?php echo $this->modelClass; ?>'=>array('admin'),		
+		);	
+		//Prepare Menu
+		$this->menu=array(					
+			array('label'=>t('labels','Create <?php echo $this->modelClass; ?>'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
+			array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			
+		);		
+		return true;
 	}
+
 
 	/**
 	 * Specifies the access control rules.
@@ -41,7 +46,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
-	{
+	{		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -77,6 +82,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed

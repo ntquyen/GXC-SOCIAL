@@ -5,19 +5,11 @@
  */
 ?>
 <?php
-echo "<?php\n";
-$label=$this->pluralize($this->class2name($this->modelClass));
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	'Create',
-);\n";
+echo "<?php 
+breadcrumbs(array(t('labels','Create')));
+?>";
 ?>
 
-$this->menu=array(
-	array('label'=>t('labels','Create <?php echo $this->modelClass; ?>'),'url'=>array('create'),'active'=>true),
-	array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>(s)'),'url'=>array('admin')),
-);
-?>
 
 <h1><?php echo "<?php echo t('labels','Create ".$this->modelClass."'); ?>"; ?></h1>
 
