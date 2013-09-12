@@ -11,7 +11,15 @@ $this->menu=array(
 
 ?>
 
-<h1><?php echo t('labels','Manage '.$this->authLabels($type)); ?></h1>
+<h1><?php echo t('labels','Manage '.$this->authLabels($type).'s'); ?></h1>
+
+<?php $this->widget('bootstrap.widgets.TbButton', array(
+    'label'=>t('labels','Create '.$this->authLabels($type)),
+    'type'=>'primary',
+    'size'=>'small', 
+    'url'=>array('create','type'=>$type)
+
+)); ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'type' => 'bordered striped',

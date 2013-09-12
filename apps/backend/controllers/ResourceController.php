@@ -16,7 +16,7 @@ class ResourceController extends BeController
 		//Prepare Menu
 		$this->menu=array(					
 			array('label'=>t('labels','Create Resource'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
-			array('label'=>t('labels','Manage Resource(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			array('label'=>t('labels','Manage Resources'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
 			
 		);		
 		return true;

@@ -6,7 +6,7 @@
  */
 class AuthController extends BeController {
 
-	/* This is for Role Action */
+	/* This is for Auth Item Action */
 	public function actionIndex() {					
 		
 		$type=$this->getType();
@@ -16,6 +16,14 @@ class AuthController extends BeController {
 			'dataProvider' => $dataProvider,
 		));
 
+	}
+
+	public function actionView() {
+
+	}
+
+	public function actionCreate() {
+		$type=$this->getType();
 	}
 
 	/* Get The Type of The Request */
@@ -37,9 +45,9 @@ class AuthController extends BeController {
 
 	public function authLabels($type=false){
 		$items = array(
-			CAuthItem::TYPE_OPERATION=>t('labels','Operations'),
-			CAuthItem::TYPE_ROLE=>t('labels','Roles'),
-			CAuthItem::TYPE_TASK=>t('labels','Tasks')
+			CAuthItem::TYPE_OPERATION=>t('labels','Operation'),
+			CAuthItem::TYPE_ROLE=>t('labels','Role'),
+			CAuthItem::TYPE_TASK=>t('labels','Task')
 		);
 
 		if($type!==null){

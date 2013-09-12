@@ -23,7 +23,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo 'Be'.$this->baseC
 		//Prepare Menu
 		$this->menu=array(					
 			array('label'=>t('labels','Create <?php echo $this->modelClass; ?>'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
-			array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			array('label'=>t('labels','Manage <?php echo $this->modelClass; ?>s'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
 			
 		);		
 		return true;

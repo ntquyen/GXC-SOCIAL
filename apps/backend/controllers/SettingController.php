@@ -16,7 +16,7 @@ class SettingController extends BeController
 		//Prepare Menu
 		$this->menu=array(					
 			array('label'=>t('labels','Create Setting'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
-			array('label'=>t('labels','Manage Setting(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			array('label'=>t('labels','Manage Settings'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
 			
 		);		
 		return true;

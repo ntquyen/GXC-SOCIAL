@@ -20,8 +20,8 @@ class UserController extends BeController
 
 		//Prepare Menu
 		$this->menu=array(					
-			array('label'=>t('labels','Manage User(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
 			array('label'=>t('labels','Create User'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
+			array('label'=>t('labels','Manage Users'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),			
 		);	
 		return true;
 	}

@@ -35,7 +35,7 @@
 
             array('label'=>'Create taxonomy',  'url'=>array('/taxonomy/create'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('create'))) ? true : false)),   
 
-            array('label'=>'Manage taxonomy',  'url'=>array('/taxonomy/admin'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('update','admin'))) ? true : false)),   
+            array('label'=>'Manage taxonomies',  'url'=>array('/taxonomy/admin'),'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('update','admin'))) ? true : false)),   
 
             //Start RESOURCE ITEMS
             array('label'=>'Resource','icon'=>'picture'),            
@@ -47,7 +47,7 @@
             //Start SYSTEM ITEMS
             array('label'=>'System','icon'=>'cog',),
             
-            array('label'=>'Settings',  'url'=>array('/system/setting'),'active'=> ((Yii::app()->controller->id=='system') && (in_array(Yii::app()->controller->action->id,array('setting'))) ? true : false)),           
+            array('label'=>'Settings',  'url'=>array('/setting/admin'),'active'=> ((Yii::app()->controller->id=='system') && (in_array(Yii::app()->controller->action->id,array('setting'))) ? true : false)),           
         ),
         'htmlOptions'=>array('class'=>'well')
     )); ?>

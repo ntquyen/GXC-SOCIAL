@@ -16,7 +16,7 @@ class ObjectController extends BeController
 		//Prepare Menu
 		$this->menu=array(					
 			array('label'=>t('labels','Create Object'),'url'=>array('create'),'active'=>$this->action->id=='create' ? true : false),
-			array('label'=>t('labels','Manage Object(s)'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
+			array('label'=>t('labels','Manage Objects'),'url'=>array('admin'),'active'=>$this->action->id=='admin' ? true : false),
 			
 		);		
 		return true;
